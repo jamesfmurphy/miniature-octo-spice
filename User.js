@@ -1,8 +1,9 @@
-function User (emailId,password,firstName,lastName,birthDate) {
+function User (emailId,password,firstName,lastName,gender,birthDate) {
         this.emailId = emailId ,
         this.password = password,
         this.firstName = firstName,
         this.lastName = lastName,
+        this.gender = gender,
         this.birthDate = birthDate,
         friends = [],
         movies = [],
