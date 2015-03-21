@@ -5,6 +5,8 @@ var main = function(){
 	var games = ["gta v", "counter-strike", "diablo", "LoL"];
 	var books = ["Harry Potter", "Lord of the Ring", "Jurrassic Park"];
 
+	var login = false;
+	homePage(login);
 	listManage(movies, games, books);
 
 /*
@@ -39,6 +41,48 @@ var JSONFetch =function (URL){
 		},type: "post"
 	});
 
+
+}
+
+
+var homePage = function(login) {
+	var $form,
+		$div,
+		$input,
+		$button,
+		$content,
+		$p;
+
+	//what the user will see if they are not login
+	if (login === false) {
+
+		$form = $("<form>").attr("class", "navbar-form navbar-right");
+		$div = $("<div>").attr("class", "form-group");
+		$input = $("<input>").attr("type", "text").attr("placeholder", "Email").attr("class", "form-control");
+		$form.append($div.append($input));
+		
+		$div = $("<div>").attr("class", "form-group");
+		$input = $("<input>").attr("type", "text").attr("placeholder", "Password").attr("class", "form-control");
+		$form.append($div.append($input));
+		
+		$button = $("<button>").attr("type", "submit").attr("class", "btn btn-success").text("Sign In");
+		$form.append($button);
+		$("div.navbar-collapse.collapse").append($form);
+
+		$div = $("<div>").attr("class", "container");
+		$content = $("<h1>").text("Welcome to Cinder!");
+		$p = $("<p>").text("A social site for the socially awkward.  Meet others with common interest!");
+		$div = $div.append($content).append($p);
+		$p = $("<p>").append($("<a>").attr("class", "btn btn-primary btn-lg").attr("href", "/public/signup.html").attr("role", "button").text
+			("Sign Up"));
+		$div.append($p);
+		$(".jumbotron").append($div);
+
+	//login successuful this is where code for profile will occur
+	} else {
+
+
+	}
 
 }
 
