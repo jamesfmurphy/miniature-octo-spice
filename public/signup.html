@@ -1,47 +1,64 @@
-<!doctype html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
  <!-- <link href="stylesheets/reset.css" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet"> -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Lugubrious Propinquity</title>
+
+   <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+   <link href="stylesheets/login.css" rel="stylesheet">
 </head>
 
 <body>
-
-  <div class="main">
-    <h2 class="title">User Sign Up Form</h2>
-    <p class="sub-title">Your email addresse will be used as your username</p>
-    
-    <!--Form  start-->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-      <form class="form" method="post" action="signup">
-      <div>
-        <label>First Name :</label>
-        <input type="text" name="firstName" id="firstName" value="" placeholder="Enter First Name"  class="input" >
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Meet Like</a>
       </div>
 
-      <div>
-        <label>Last Name :</label>
-        <input type="text" name="lastName" id="lastName" value="" placeholder="Enter Last Name" class="input" >
-      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+
+
+      </div><!--/.navbar-collapse -->
+      
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+  </nav>
+  
+    <div class="container">
+
+      <form class="form-signin" method="post" action="signup">
+        <h2 class="form-signin-heading">Sign Up</h2>
+
+        <label for="firstName" class="sr-only">First Name</label>
+        <input type="text" id="firstName" class="form-control" placeholder="First Name" required autofocus>
+
+        <label for="lastName" class="sr-only">Last Name</label>
+        <input type="text" id="lastName" class="form-control" placeholder="Last Name" required>
+
+        <label for="email" class="sr-only">Email address</label>
+        <input type="email" id="email" class="form-control" placeholder="Email address" required >
+
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Create Password" required>
+
+        <label for="enterpassword" class="sr-only">Re-enter Password</label>
+        <input type="password" id="enterpassword" class="form-control" placeholder="Re-enter Password" required>
 
       <div>
-        <label>Username :</label>
-        <input type="text" name="emailId" id="email" value=""  placeholder="Enter Your Email" class="input">
-      </div>
-
-      <div>
-        <label>Password :</label>
-        <input type="password" name="password" id="password" value=""  placeholder="Enter Your Password" class="input">
-      </div>
-
-      <div>
-        <label>Re-enter Password :</label>
-        <input type="text" name="enterPassword" id="enterpassword" value=""  placeholder="Re-enter Your Password" class="input">
-      </div>
-
-      <!--birthday details start-->
-      <div>
-      <label>Birthday :</label>
+      <label ></label>
         <select id="month" name="b_month" >
           <option value="" selected >Month</option>
           <option value="1">Jan</option>
@@ -58,7 +75,7 @@
           <option value="12">Dec</option>
         </select>
 
-        <select id="day" name="b_day" >
+        <select id="day" name="b_day">
           <option value="" selected>Day</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -134,25 +151,25 @@
           <option value="1979">1979</option>
         </select>
       </div>
-      
-      <!--Gender details starts-->
+     
       <div id="radio_button">
         <label>Gender :</label>
-        <input class="gender" type="radio" name="radiobutton" value="Female">
+        <input type="radio" name="radiobutton" value="Female">
         <label >Female</label>
-        <input class="gender" type="radio" name="radiobutton" value="Male">
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="radiobutton" value="Male">
         <label >Male</label>
       </div>
 
-      <div>
-        <input type="button" name="Sign Up" id="button" value="sign up" onclick="if(validation())submit();">
-      </div>
+        
 
-     </form>
-    </div>
-    <!--form ends-->
-  </div>
-      <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <input class="btn btn-lg btn-primary btn-block" type="button" name="Sign Up" id="button" value="sign up" onclick="if(validation())submit();">
+      </form>
+
+    </div> <!-- /container -->
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="javascripts/signup.js"></script>
+        
+
 </body>
 </html>
