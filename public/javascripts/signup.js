@@ -1,5 +1,29 @@
 var main= function () {
     "use strict";
+  $('#signupBtn').on('click',function (event){ 
+      if(!validation()) return;
+      $.ajax({
+      url:"/signup",
+      error : function () {
+            $("#messageDiv").empty();
+            $("#messageDiv").text("error ajax call");
+      },dataType: "json",
+      data:$( "#signupForm" ).serialize(),
+      success: function (data) {
+            $("#messageDiv").empty();
+            var result = JSON.parse(data);
+            if(result.status !== 'success'){
+              $('#messageDiv').append('<p calss="">'+
+                 result.message+'</p>'+
+                '<a id="loginLink" href="/login.show">login</a> | '+
+                '<a id="homeLink" href="/">Home</a>');
+            }else{
+              console.log(' signup success');
+              window.location.href ="/";
+            } 
+      },type: "post"
+    });
+  });
 };
 
 function validation(){
@@ -19,16 +43,16 @@ function validation(){
      return false;
    } 
   
-  if ( $("#email").val() === "")
+  if ( $("#emailId").val() === "")
   {
-  $("#email").focus() ;
+  $("#emailId").focus() ;
   alert("enter the email");
   return false;
 
-  } else if( !emailRegex.test($("#email").val()))
+  } else if( !emailRegex.test($("#emailId").val()))
 
         {
-          $("#email").focus() ;
+          $("#emailId").focus() ;
           alert("enter the valid email");
           return false;
         }
@@ -54,23 +78,23 @@ function validation(){
    return false;
  }
    
-  if ($("#month").val() === "") 
+  if ($("#b_month").val() === "") 
   {
-    $("#month").focus();
+    $("#b_month").focus();
     alert("select the birthday month");
     return false;
   }
 
-  if ($("#day").val() === "")
+  if ($("#b_day").val() === "")
   {
-    $("#day").focus();
+    $("#b_day").focus();
     alert("select the birthday day");
     return false;
   }
 
-  if ($("#year").val() === "")
+  if ($("#b_year").val() === "")
   {
-    $("#year").focus();
+    $("#b_year").focus();
     alert("select the birthday year");
     return false;
   }

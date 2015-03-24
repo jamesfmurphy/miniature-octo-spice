@@ -1,92 +1,74 @@
-<!doctype html>
-
 <html>
 <head>
-	<title>Meet Like</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<title>miniature octo spice</title>
+	<link href="public/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="public/stylesheets/login.css" rel="stylesheet">
 </head>
+<body >
+<header>
 
-<body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Meet Like</a>
-			</div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="">Meet Like</a>
+      </div>
 
-			<div id="navbar" class="navbar-collapse collapse">
+      <div id="navbar" class="navbar-collapse collapse">
 
 
-			</div><!--/.navbar-collapse -->
-			<a href="login.html">Login</a>
-			<a href="signup.html">Sign Up</a>
-		</div>
-	</nav>
-
-	<div class="jumbotron">
+      </div><!--/.navbar-collapse -->
       
     </div>
+  </nav>
 
-    <!-- <div class="container">
-      
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div> -->
+</header>	
+<main>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome To Social Site</h1>
 
-      <hr>
+  
+      <div id="profile"></div>
 
-      <footer>
-        <!-- <p>&copy; Company 2014</p> -->
-      </footer>
     </div>
-
-	<main>
-		
-		<div class="container">
-			<div class="tabs">
-				<a href=""><span class="active">Movies</span></a>
-				<a href=""><span>Games</span></a>
-				<a href=""><span>Books</span></a>
-				<a href=""><span>Add</span></a>
-			</div>
-			<div class="content">
-
-				<div class="listSelect">
-				</div>
-
-				<ul>
-				</ul>
-			</div>
-		</div>
-
-	</main>
-
-	<footer>
-	</footer>
-	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-	<script src="/public/javascripts/app.js"></script>
-
-</body>
+  </div>
+<div class="row">
+  
+  <div class="container">
+    <div class="col-md-4">
+    <div id='searchForMovies'>
+      <h2 >Search for Movies</h2>
+        <label for="searchForMovies" >Search For Movies</label>
+        <input id="movieName" name="movieName" placeholder="look for Movies">
+        <div id='moviesResults'></div>
+    </div>
+  </div>
 
 
+      <div class="col-md-4">
+        <div id='searchForFiernd'>
+          <h2 >Search for friends</h2>
+            <label for="searchQuery" >Search For Friends</label>
+            <input id="queryString" name="queryString" placeholder="look for name">
+            <div id='searchForFierndResult'></div>
+        </div>
+      </div>
 
-</html>
+    </div>
+  </div>
+</main>
+<hr>
+<footer>
+  <div id='loginUserList'></div>
+
+  </div>
+</footer>
+<script src="public/javascripts/jquery-2.0.3.min.js"></script>
+<script src="public/javascripts/index.js"></script>
+</body></html>
