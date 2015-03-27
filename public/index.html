@@ -3,9 +3,10 @@
 	<title>miniature octo spice</title>
 	<link href="public/stylesheets/bootstrap.min.css" rel="stylesheet">
   <link href="public/stylesheets/login.css" rel="stylesheet">
+  <link href="public/stylesheets/style.css" rel="stylesheet">
 </head>
 <body >
-<header>
+
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -27,26 +28,24 @@
     </div>
   </nav>
 
-</header>	
-<main>
+
+
   <div class="jumbotron">
-    <div class="container">
-      <h1>Welcome To Social Site</h1>
-
-  
-      <div id="profile"></div>
-
-    </div>
+    <h1>Welcome To Social Site</h1>
+    <div id="profile"></div>
   </div>
+
+<div class="container">
+      
 <div class="row">
-  
-  <div class="container">
+    
     <div class="col-md-4">
     <div id='searchForMovies'>
       <h2 >Search for Movies</h2>
         <label for="searchForMovies" >Search For Movies</label>
         <input id="movieName" name="movieName" placeholder="look for Movies">
         <div id='moviesResults'></div>
+        <button id="" action="" value="">Add Movie</button>
     </div>
   </div>
 
@@ -57,18 +56,51 @@
             <label for="searchQuery" >Search For Friends</label>
             <input id="queryString" name="queryString" placeholder="look for name">
             <div id='searchForFierndResult'></div>
+            <button id="" action="" value="">Add Friend</button>
         </div>
       </div>
 
     </div>
   </div>
-</main>
+
 <hr>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Movies</h2>
+        <p class="movie"></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Music</h2>
+        <p class="music"></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Books</h2>
+        <p class="book"></p>
+      </div>
+    </div>
+  </div>
+
+    <hr>
+
+    <div class="container">
+    <div class="tabs">
+      <a id="add"></a>
+    </div>
+    <div class="content">
+      
+    </div>
+  </div>
+
+
+
 <footer>
   <div id='loginUserList'></div>
 
   </div>
 </footer>
+
 <script src="public/javascripts/jquery-2.0.3.min.js"></script>
 <script src="public/javascripts/index.js"></script>
 </body></html>

@@ -2,3 +2,8 @@ body {
   background: white;
 
 }
+
+#moviesResults img {
+	width: 150px;
+	height: 225px;
+}

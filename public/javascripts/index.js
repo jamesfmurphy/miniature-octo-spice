@@ -35,7 +35,7 @@ var searchForMovies = function (){
           dataType: 'jsonp',
           success: function(data) {
             if (data.total_results > 0){
-              $('#moviesResults').html('<h3 >We found the poster</h3><img id="poster" style="width: 150px, height: 200px" src="http://image.tmdb.org//t//p//w500' + data.results[0].poster_path+ '"/>');
+              $('#moviesResults').html('<h3>' + data.results[0].original_title + '</h3>' + '<img id="poster"  src="http://image.tmdb.org//t//p//w500' + data.results[0].poster_path+ '"/>');
             } else {
               $('#moviesResults').html('<h3 >We do not find what you search</h3><img id="poster" src="" />');
             }
@@ -104,6 +104,8 @@ var main = function(){
        }
    });
 }
+
+
 
 //setInterval(AJAXFetch(),200);};
 $(document).ready(main);
