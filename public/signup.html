@@ -1,21 +1,13 @@
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- <!-- <link href="stylesheets/reset.css" rel="stylesheet">
-  <link href="stylesheets/style.css" rel="stylesheet"> -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Lugubrious Propinquity</title>
-
-   <link href="public/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="public/stylesheets/bootstrap.min.css" rel="stylesheet">
    <link href="public/stylesheets/login.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -38,31 +30,42 @@
     </div>
   </nav>
 
-  <main>
-  
+  <div class="main">
+    
+    
+    <!--Form  start-->
     <div class="container">
-
-      <form class="form-signin" method="post"  id="signupForm">
-        <h2 class="form-signin-heading">Sign Up</h2>
-
+      <form class="form-signin" method="post" id="signupForm">
+       <h2 class="form-signin-heading">Sign Up</h2>
+      <div>
         <label for="firstName" class="sr-only">First Name</label>
-        <input type="text" id="firstName" class="form-control" placeholder="First Name" required autofocus>
-
-        <label for="lastName" class="sr-only">Last Name</label>
-        <input type="text" id="lastName" class="form-control" placeholder="Last Name" required>
-
-        <label for="email" class="sr-only">Email address</label>
-        <input type="email" id="emailId" class="form-control" placeholder="Email address" required >
-
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" id="password" class="form-control" placeholder="Create Password" required>
-
-        <label for="enterpassword" class="sr-only">Re-enter Password</label>
-        <input type="password" id="enterpassword" class="form-control" placeholder="Re-enter Password" required>
+        <input type="text" name="firstName" id="firstName" value="" placeholder="Enter First Name"  class="form-control" >
+      </div>
 
       <div>
-      <label ></label>
-        <select id="month" name="b_month" >
+        <label for="lastName" class="sr-only">Last Name</label>
+        <input type="text" name="lastName" id="lastName" value="" placeholder="Enter Last Name" class="form-control" >
+      </div>
+
+      <div>
+        <label for="email" class="sr-only">Email address</label>
+        <input type="text" name="emailId" id="emailId" value=""  placeholder="Enter Your Email" class="form-control">
+      </div>
+
+      <div>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" value=""  placeholder="Enter Your Password" class="form-control">
+      </div>
+
+      <div>
+        <label for="enterpassword" class="sr-only">Re-enter Password</label>
+        <input type="password" name="enterPassword" id="enterpassword" value=""  placeholder="Re-enter Your Password" class="form-control">
+      </div>
+
+      <!--birthday details start-->
+      <div>
+      
+        <select id="b_month" name="b_month" >
           <option value="" selected >Month</option>
           <option value="1">Jan</option>
           <option value="2">Feb</option>
@@ -78,7 +81,7 @@
           <option value="12">Dec</option>
         </select>
 
-        <select id="day" name="b_day">
+        <select id="b_day" name="b_day" >
           <option value="" selected>Day</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -113,10 +116,10 @@
           <option value="31">31</option>
         </select>
 
-        <select id="year" name="b_year">
+        <select id="b_year" name="b_year">
           <option value="" selected>Year</option>
-          <option value="2015">2015</option>
-          <option value="2014">2014</option>
+          <option value="2015">2013</option>
+          <option value="2014">2012</option>
           <option value="2013">2013</option>
           <option value="2012">2012</option>
           <option value="2011">2011</option>
@@ -154,28 +157,25 @@
           <option value="1979">1979</option>
         </select>
       </div>
-     
+      
+      <!--Gender details starts-->
       <div id="radio_button">
-        <label>Gender :</label>
-        <input class="gender" type="radio" id="radiobutton" value="Female">
+        
+        <input class="gender" type="radio" name="radiobutton" id ="radiobutton" value="Female">
         <label >Female</label>
-        &nbsp;&nbsp;&nbsp;
-        <input class="gender" type="radio" id="radiobutton" value="Male">
+        <input class="gender" type="radio" name="radiobutton" id="radiobutton"  value="Male">
         <label >Male</label>
       </div>
 
-        
-
+      <div>
         <input class="btn btn-lg btn-primary btn-block" type="button" name="Sign Up" id="signupBtn" value="sign up" >
-
-        <div id='messageDiv' class=''></div>
-      </form>
-
-    </div> <!-- /container -->
-    </main> <!-- main -->
-    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script src="public/javascripts/signup.js"></script>
-        
-
+      </div>
+      <div id='messageDiv' class=''></div>
+     </form>
+    </div>
+    <!--form ends-->
+  </div>
+      <script src="/public/javascripts/jquery-2.0.3.min.js"></script>
+    <script src="/public/javascripts/signup.js"></script>
 </body>
 </html>
