@@ -1,171 +1,118 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node',
-1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   'express-generator',
-1 verbose cli   '-g' ]
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'mongod' ]
 2 info using npm@2.5.1
 3 info using node@v0.12.0
-4 silly cache add args [ 'express-generator', null ]
-5 verbose cache add spec express-generator
-6 silly cache add parsed spec { raw: 'express-generator',
-6 silly cache add   scope: null,
-6 silly cache add   name: 'express-generator',
-6 silly cache add   rawSpec: '',
-6 silly cache add   spec: '*',
-6 silly cache add   type: 'range' }
-7 verbose addNamed express-generator@*
-8 silly addNamed semver.valid null
-9 silly addNamed semver.validRange *
-10 silly addNameRange { name: 'express-generator', range: '*', hasData: false }
-11 silly mapToRegistry name express-generator
-12 silly mapToRegistry using default registry
-13 silly mapToRegistry registry https://registry.npmjs.org/
-14 silly mapToRegistry uri https://registry.npmjs.org/express-generator
-15 verbose addNameRange registry:https://registry.npmjs.org/express-generator not in flight; fetching
-16 verbose request uri https://registry.npmjs.org/express-generator
-17 verbose request no auth needed
-18 info attempt registry request try #1 at 7:19:53 AM
-19 verbose request id 8528ef8fb2d10185
-20 http request GET https://registry.npmjs.org/express-generator
-21 http 200 https://registry.npmjs.org/express-generator
-22 silly get cb [ 200,
-22 silly get   { date: 'Mon, 23 Mar 2015 14:19:53 GMT',
-22 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-22 silly get     etag: '"3TI97QC0GH2OK1K5YNJAOHR21"',
-22 silly get     'content-type': 'application/json',
-22 silly get     'cache-control': 'max-age=60',
-22 silly get     'content-length': '25564',
-22 silly get     'accept-ranges': 'bytes',
-22 silly get     via: '1.1 varnish',
-22 silly get     age: '0',
-22 silly get     'x-served-by': 'cache-sjc3121-SJC',
-22 silly get     'x-cache': 'HIT',
-22 silly get     'x-cache-hits': '1',
-22 silly get     'x-timer': 'S1427120393.696478,VS0,VE151',
-22 silly get     vary: 'Accept',
-22 silly get     'keep-alive': 'timeout=10, max=50',
-22 silly get     connection: 'Keep-Alive' } ]
-23 verbose get saving express-generator to /Users/jamesmurphy/.npm/registry.npmjs.org/express-generator/.cache.json
-24 silly addNameRange number 2 { name: 'express-generator', range: '*', hasData: true }
-25 silly addNameRange versions [ 'express-generator',
-25 silly addNameRange   [ '1.0.0',
-25 silly addNameRange     '3.0.0',
-25 silly addNameRange     '4.0.0',
-25 silly addNameRange     '4.2.0',
-25 silly addNameRange     '4.8.0',
-25 silly addNameRange     '4.9.0',
-25 silly addNameRange     '4.10.0',
-25 silly addNameRange     '4.11.0',
-25 silly addNameRange     '4.11.1',
-25 silly addNameRange     '4.11.2',
-25 silly addNameRange     '4.12.0',
-25 silly addNameRange     '4.12.1' ] ]
-26 verbose addNamed express-generator@4.12.1
-27 silly addNamed semver.valid 4.12.1
-28 silly addNamed semver.validRange 4.12.1
-29 silly mapToRegistry name express-generator
-30 silly mapToRegistry using default registry
-31 silly mapToRegistry registry https://registry.npmjs.org/
-32 silly mapToRegistry uri https://registry.npmjs.org/express-generator
-33 verbose addRemoteTarball https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz not in flight; adding
-34 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz',
-34 verbose addRemoteTarball   '79852114d5fc42b9b8f7690567b155ebdf17a246' ]
-35 info retry fetch attempt 1 at 7:19:53 AM
-36 info attempt registry request try #1 at 7:19:53 AM
-37 http fetch GET https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz
-38 http fetch 200 https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz
-39 silly fetchAndShaCheck shasum 79852114d5fc42b9b8f7690567b155ebdf17a246
-40 verbose addTmpTarball /var/folders/hy/7gs6_v3s04g8csj16xt6z5v80000gn/T/npm-7790-c9de53a7/registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz not in flight; adding
-41 verbose addTmpTarball already have metadata; skipping unpack for express-generator@4.12.1
-42 silly cache afterAdd express-generator@4.12.1
-43 verbose afterAdd /Users/jamesmurphy/.npm/express-generator/4.12.1/package/package.json not in flight; writing
-44 verbose afterAdd /Users/jamesmurphy/.npm/express-generator/4.12.1/package/package.json written
-45 silly install resolved [ { name: 'express-generator',
-45 silly install resolved     description: 'Express\' application generator',
-45 silly install resolved     version: '4.12.1',
-45 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
-45 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
-45 silly install resolved     keywords:
-45 silly install resolved      [ 'express',
-45 silly install resolved        'framework',
-45 silly install resolved        'sinatra',
-45 silly install resolved        'web',
-45 silly install resolved        'rest',
-45 silly install resolved        'restful',
-45 silly install resolved        'router',
-45 silly install resolved        'app',
-45 silly install resolved        'api' ],
-45 silly install resolved     repository: { type: 'git', url: 'https://github.com/expressjs/generator' },
-45 silly install resolved     license: 'MIT',
-45 silly install resolved     dependencies: { commander: '2.6.0', mkdirp: '0.5.0', 'sorted-object': '1.0.0' },
-45 silly install resolved     main: 'bin/express',
-45 silly install resolved     preferGlobal: true,
-45 silly install resolved     bin: { express: './bin/express' },
-45 silly install resolved     devDependencies: { mocha: '~2.1.0', rimraf: '~2.2.8', supertest: '~0.15.0' },
-45 silly install resolved     engines: { node: '>= 0.10' },
-45 silly install resolved     files: [ 'LICENSE', 'bin/', 'templates/' ],
-45 silly install resolved     scripts:
-45 silly install resolved      { test: 'mocha --reporter spec --bail --check-leaks test/',
-45 silly install resolved        'test-ci': 'mocha --reporter spec --check-leaks test/' },
-45 silly install resolved     gitHead: 'd9674537f819db269aa54b241a5436fbbf4f2fe0',
-45 silly install resolved     bugs: { url: 'https://github.com/expressjs/generator/issues' },
-45 silly install resolved     homepage: 'https://github.com/expressjs/generator',
-45 silly install resolved     _id: 'express-generator@4.12.1',
-45 silly install resolved     _shasum: '79852114d5fc42b9b8f7690567b155ebdf17a246',
-45 silly install resolved     _from: 'express-generator@*',
-45 silly install resolved     _npmVersion: '1.4.28',
-45 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
-45 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
-45 silly install resolved     dist:
-45 silly install resolved      { shasum: '79852114d5fc42b9b8f7690567b155ebdf17a246',
-45 silly install resolved        tarball: 'http://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz' },
-45 silly install resolved     directories: {},
-45 silly install resolved     _resolved: 'https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz' } ]
-46 info install express-generator@4.12.1 into /usr/local/lib
-47 info installOne express-generator@4.12.1
-48 verbose installOne of express-generator to /usr/local/lib not in flight; installing
-49 verbose lock using /Users/jamesmurphy/.npm/_locks/express-generator-d3cc1706f4adef09.lock for /usr/local/lib/node_modules/express-generator
-50 silly install write writing express-generator 4.12.1 to /usr/local/lib/node_modules/express-generator
-51 silly cache addNamed cb express-generator@4.12.1
-52 verbose unbuild lib/node_modules/express-generator
-53 verbose gentlyRm vacuuming /usr/local/lib/node_modules/express-generator
-54 verbose tar unpack /Users/jamesmurphy/.npm/express-generator/4.12.1/package.tgz
-55 verbose tar unpacking to /usr/local/lib/node_modules/express-generator
-56 verbose gentlyRm vacuuming /usr/local/lib/node_modules/express-generator
-57 silly gunzTarPerm modes [ '755', '644' ]
-58 error tar.unpack untar error /Users/jamesmurphy/.npm/express-generator/4.12.1/package.tgz
-59 verbose unlock done using /Users/jamesmurphy/.npm/_locks/express-generator-d3cc1706f4adef09.lock for /usr/local/lib/node_modules/express-generator
-60 verbose fstream_path /usr/local/lib/node_modules/express-generator
-61 verbose fstream_type Directory
-62 verbose fstream_class DirWriter
-63 verbose stack Error: EACCES, mkdir '/usr/local/lib/node_modules/express-generator'
-63 verbose stack     at Error (native)
-64 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
-64 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
-64 verbose fstream_stack FSReqWrap.oncomplete (fs.js:99:15)
-65 verbose cwd /Users/jamesmurphy/Desktop/miniature-octo-spice-3
-66 error Darwin 13.4.0
-67 error argv "node" "/usr/local/bin/npm" "install" "express-generator" "-g"
-68 error node v0.12.0
-69 error npm  v2.5.1
-70 error path /usr/local/lib/node_modules/express-generator
-71 error code EACCES
-72 error errno -13
-73 error Error: EACCES, mkdir '/usr/local/lib/node_modules/express-generator'
-73 error     at Error (native)
-73 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/express-generator']
-73 error   errno: -13,
-73 error   code: 'EACCES',
-73 error   path: '/usr/local/lib/node_modules/express-generator',
-73 error   fstream_type: 'Directory',
-73 error   fstream_path: '/usr/local/lib/node_modules/express-generator',
-73 error   fstream_class: 'DirWriter',
-73 error   fstream_stack:
-73 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
-73 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
-73 error      'FSReqWrap.oncomplete (fs.js:99:15)' ] }
-74 error Please try running this command again as root/Administrator.
-75 verbose exit [ -13, true ]
-76 verbose unbuild lib/node_modules/express-generator
-77 verbose gentlyRm vacuuming /usr/local/lib/node_modules/express-generator
+4 verbose node symlink /usr/bin/node
+5 warn package.json mongo@0.1.0 No repository field.
+6 silly cache add args [ 'mongod', null ]
+7 verbose cache add spec mongod
+8 silly cache add parsed spec { raw: 'mongod',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'mongod',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 verbose addNamed mongod@*
+10 silly addNamed semver.valid null
+11 silly addNamed semver.validRange *
+12 silly addNameRange { name: 'mongod', range: '*', hasData: false }
+13 silly mapToRegistry name mongod
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry uri https://registry.npmjs.org/mongod
+17 verbose addNameRange registry:https://registry.npmjs.org/mongod not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/mongod
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 19:32:35
+21 verbose request id a63d93a210fd3bfd
+22 http request GET https://registry.npmjs.org/mongod
+23 http 200 https://registry.npmjs.org/mongod
+24 silly get cb [ 200,
+24 silly get   { date: 'Fri, 03 Apr 2015 02:32:35 GMT',
+24 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 silly get     etag: '"BZCT985QEK2UVFXRSBLRLGRQ"',
+24 silly get     'content-type': 'application/json',
+24 silly get     'cache-control': 'max-age=60',
+24 silly get     'content-length': '5516',
+24 silly get     'accept-ranges': 'bytes',
+24 silly get     via: '1.1 varnish',
+24 silly get     age: '0',
+24 silly get     'x-served-by': 'cache-lax1428-LAX',
+24 silly get     'x-cache': 'MISS',
+24 silly get     'x-cache-hits': '0',
+24 silly get     'x-timer': 'S1428028355.821861,VS0,VE81',
+24 silly get     vary: 'Accept',
+24 silly get     'keep-alive': 'timeout=10, max=50',
+24 silly get     connection: 'Keep-Alive' } ]
+25 verbose get saving mongod to /home/tommy/.npm/registry.npmjs.org/mongod/.cache.json
+26 silly addNameRange number 2 { name: 'mongod', range: '*', hasData: true }
+27 silly addNameRange versions [ 'mongod', [ '1.0.0', '1.1.0', '1.1.1', '1.2.0', '1.3.0' ] ]
+28 verbose addNamed mongod@1.3.0
+29 silly addNamed semver.valid 1.3.0
+30 silly addNamed semver.validRange 1.3.0
+31 silly mapToRegistry name mongod
+32 silly mapToRegistry using default registry
+33 silly mapToRegistry registry https://registry.npmjs.org/
+34 silly mapToRegistry uri https://registry.npmjs.org/mongod
+35 verbose addRemoteTarball https://registry.npmjs.org/mongod/-/mongod-1.3.0.tgz not in flight; adding
+36 verbose addRemoteTarball [ 'https://registry.npmjs.org/mongod/-/mongod-1.3.0.tgz',
+36 verbose addRemoteTarball   '52074505844ba449021c4fea9349a9876c7534b9' ]
+37 info retry fetch attempt 1 at 19:32:35
+38 info attempt registry request try #1 at 19:32:35
+39 http fetch GET https://registry.npmjs.org/mongod/-/mongod-1.3.0.tgz
+40 http fetch 200 https://registry.npmjs.org/mongod/-/mongod-1.3.0.tgz
+41 silly fetchAndShaCheck shasum 52074505844ba449021c4fea9349a9876c7534b9
+42 verbose addTmpTarball /tmp/npm-4034-23e9165a/registry.npmjs.org/mongod/-/mongod-1.3.0.tgz not in flight; adding
+43 verbose addTmpTarball already have metadata; skipping unpack for mongod@1.3.0
+44 silly cache afterAdd mongod@1.3.0
+45 verbose afterAdd /home/tommy/.npm/mongod/1.3.0/package/package.json not in flight; writing
+46 verbose afterAdd /home/tommy/.npm/mongod/1.3.0/package/package.json written
+47 silly install resolved [ { name: 'mongod',
+47 silly install resolved     version: '1.3.0',
+47 silly install resolved     description: 'Promise based mongo driver built on mongojs',
+47 silly install resolved     keywords: [],
+47 silly install resolved     dependencies: { promise: '~5.0.0', mongojs: '~0.12.1' },
+47 silly install resolved     devDependencies: { mocha: '*' },
+47 silly install resolved     scripts: { test: 'mocha -R spec' },
+47 silly install resolved     repository: { type: 'git', url: 'https://github.com/then/mongod.git' },
+47 silly install resolved     author: { name: 'ForbesLindesay' },
+47 silly install resolved     license: 'MIT',
+47 silly install resolved     bugs: { url: 'https://github.com/then/mongod/issues' },
+47 silly install resolved     homepage: 'https://github.com/then/mongod',
+47 silly install resolved     _id: 'mongod@1.3.0',
+47 silly install resolved     dist:
+47 silly install resolved      { shasum: '52074505844ba449021c4fea9349a9876c7534b9',
+47 silly install resolved        tarball: 'http://registry.npmjs.org/mongod/-/mongod-1.3.0.tgz' },
+47 silly install resolved     _from: 'mongod@*',
+47 silly install resolved     _npmVersion: '1.3.21',
+47 silly install resolved     _npmUser: { name: 'forbeslindesay', email: 'forbes@lindesay.co.uk' },
+47 silly install resolved     maintainers: [ [Object] ],
+47 silly install resolved     directories: {},
+47 silly install resolved     _shasum: '52074505844ba449021c4fea9349a9876c7534b9',
+47 silly install resolved     _resolved: 'https://registry.npmjs.org/mongod/-/mongod-1.3.0.tgz' } ]
+48 info install mongod@1.3.0 into /home/tommy/Desktop/latest Project 473/miniature-octo-spice
+49 info installOne mongod@1.3.0
+50 verbose installOne of mongod to /home/tommy/Desktop/latest Project 473/miniature-octo-spice not in flight; installing
+51 warn locking Error: EACCES, open '/home/tommy/.npm/_locks/mongod-2df40445927e6e26.lock'
+51 warn locking     at Error (native)
+51 warn locking  /home/tommy/.npm/_locks/mongod-2df40445927e6e26.lock failed { [Error: EACCES, open '/home/tommy/.npm/_locks/mongod-2df40445927e6e26.lock']
+51 warn locking   errno: -13,
+51 warn locking   code: 'EACCES',
+51 warn locking   path: '/home/tommy/.npm/_locks/mongod-2df40445927e6e26.lock' }
+52 verbose stack Error: Attempt to unlock /home/tommy/Desktop/latest Project 473/miniature-octo-spice/node_modules/mongod, which hasn't been locked
+52 verbose stack     at unlock (/usr/lib/node_modules/npm/lib/utils/locker.js:66:11)
+52 verbose stack     at cb (/usr/lib/node_modules/npm/lib/install.js:929:5)
+52 verbose stack     at /usr/lib/node_modules/npm/lib/install.js:933:20
+52 verbose stack     at /usr/lib/node_modules/npm/lib/utils/locker.js:40:9
+52 verbose stack     at cb (/usr/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+52 verbose stack     at /usr/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+52 verbose stack     at FSReqWrap.oncomplete (fs.js:99:15)
+53 verbose cwd /home/tommy/Desktop/latest Project 473/miniature-octo-spice
+54 error Linux 3.16.0-31-generic
+55 error argv "/usr/bin/node" "/usr/bin/npm" "install" "mongod"
+56 error node v0.12.0
+57 error npm  v2.5.1
+58 error Attempt to unlock /home/tommy/Desktop/latest Project 473/miniature-octo-spice/node_modules/mongod, which hasn't been locked
+59 error If you need help, you may report this error at:
+59 error     <http://github.com/npm/npm/issues>
+60 verbose exit [ 1, true ]

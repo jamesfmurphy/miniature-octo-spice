@@ -117,6 +117,10 @@ app.post("/signup", function (req, res) {
         );
 });
 
+app.post("/updateMovie", function (req, res) {
+
+});
+
 app.post("/login", function (req, res) {
     // User (emailId,password,firstName,lastName,birthDate) 
     console.log('email:'+req.body.emailId);
@@ -134,7 +138,7 @@ app.post("/login", function (req, res) {
                                 console.log('ERROR:'+err);
                                 return;
                             }
-                            var result = {"status":"","message":""};
+                            var result = {"status":"","message":"", "redirect":""};
                             console.log(users);
                             if(users.length >0){
                                 req.session.currentUser = users[0];
@@ -142,6 +146,7 @@ app.post("/login", function (req, res) {
                                 console.log(users[0])    ;
                                 result.status = "success";
                                 result.message = "authenticated";
+                                result.redirect = "/profile.show"
                                 res.json(JSON.stringify(result));
                             }
                             else{
@@ -168,19 +173,28 @@ app.get("/logout",function(req,res){
     }
     console.log('loginUser after logout:'+loginUser)
     delete req.session.currentUser;
-    res.sendFile('public/index.html', {root: __dirname });
+    res.sendFile('public/indexMain.html', {root: __dirname });
+});
+
+app.post("/profile.show", function (req, res) {
+    console.log('in post /profile.show');
+    res.sendFile('public/profile.html', {root: __dirname });
+});
+app.get("/profile.show", function (req, res) {
+    console.log('in post /profile.show');
+    res.sendFile('public/profile.html', {root: __dirname });
 });
 app.post("/signup.show", function (req, res) {
-    console.log('in post /signup.show')
+    console.log('in post /signup.show');
     res.sendFile('public/signup.html', {root: __dirname });
 });
 
 app.get("/signup.show", function (req, res) {
-    console.log('in get /signup.show')
+    console.log('in get /signup.show');
     res.sendFile('public/signup.html', {root: __dirname });
 });
 app.get("/", function (req, res) {
-    res.sendFile('public/index.html', {root: __dirname });
+    res.sendFile('public/indexMain.html', {root: __dirname });
 });
 app.post("/search", function (req, res) {
     console.log('queryString:'+req.body.queryString);
