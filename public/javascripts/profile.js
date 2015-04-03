@@ -57,17 +57,18 @@ var fillProfile = function(user)
 	$("#name h1").append(user.firstName+' '+user.lastName);
 
 	var displayMovie = function(user) {
-		$(".col-md-4 .movie").empty();
+		$(".col-md-44 .movie").empty();
 		user.movies.forEach(function (movie) {
 			var $newLI =$("<li>");
 			
 			$newLI.text(movie.titleM);
-			$(".col-md-4 .movie").append($newLI);
-			$(".col-md-4 .movie").append($("<span>").append($("<img>").attr("src", "http://image.tmdb.org/t/p/w92" + movie.poster)));
+			// $(".col-md-4 .movie").append($newLI);
+			$(".col-md-44 .movie").append($("<span>").append($("<img>").attr("src", "http://image.tmdb.org/t/p/w92" + movie.poster)));
 		});
 	};
 
-	var displayGames = function(user) {
+	//if we decide to implement
+	/*var displayGames = function(user) {
 		$(".col-md-4 .game").empty();
 		user.games.forEach(function (game) {
 			var $newLI =$("<li>");
@@ -84,11 +85,11 @@ var fillProfile = function(user)
 			$newLI.text(book);
 			$(".col-md-4 .books").append($newLI);
 		});
-	};
+	};*/
 
 	displayMovie(user);
-	displayGames(user);
-	displayBooks(user);
+/*	displayGames(user);
+	displayBooks(user);*/
 
 	$("body .list button").on("click", function () {
 		console.log("CLICK!");
@@ -114,11 +115,13 @@ var fillProfile = function(user)
 				});
 
 				$(".list input").val("");
+
+				//if we decide to implement
 				// $.post("updateMovie", currentUser, function(response) {
 				// 	console.log("works");
 					
 				// });
-			} else if ($(".list select").val() === "Games") {
+			} /*else if ($(".list select").val() === "Games") {
 				console.log("hello!!");
 				user.games.push($(".list input").val());
 				$(".list input").val("");
@@ -129,7 +132,7 @@ var fillProfile = function(user)
 				$(".list input").val("");
 				$(".col-md-4 .book").empty();
 				displayBooks(user);
-			}
+			}*/
 
 		}
 
