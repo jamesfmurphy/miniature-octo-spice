@@ -1,4 +1,5 @@
 var express = require("express"),
+    request = require('request'),
     http = require("http"),
     app = express(),
     bodyParser = require('body-parser'),
@@ -117,8 +118,42 @@ app.post("/signup", function (req, res) {
         );
 });
 
-app.post("/updateMovie", function (req, res) {
 
+//API
+app.post("/API", function (req, res) {
+    movieName = req.body;
+   
+    var temp = 'http://api.themoviedb.org/3/search/movie?api_key=ae22cfb91b3d2c0a8179d99a29831489&query=' + movieName.titleM;
+    // console.log(temp);
+
+    request({
+      method: 'GET',
+      url: temp,
+      headers: {
+        'Accept': 'application/json'
+    }}, function (error, response, body) {
+      // console.log('Status:', response.statusCode);
+      // console.log('Headers:', JSON.stringify(response.headers));
+      res.json(JSON.parse(body));
+  });
+
+});
+
+app.post("/updateUser", function (req, res) {
+    tempUser = req.body;
+    console.log(req.body.emailId);
+    console.log(tempUser);
+
+
+
+    UserModel.update({emailId: req.body.emailId}, {
+        movies: tempUser.movies
+    }, function(err, numAffected, rawResponse) {
+
+    });
+
+
+    
 });
 
 app.post("/login", function (req, res) {
@@ -130,33 +165,33 @@ app.post("/login", function (req, res) {
          //               null,null,null,null);
         //var userModel = new UserModel(user);
         UserModel.find({ 
-                        'emailId': req.body.emailId, 
-                       'password': req.body.password
-                        }, 
-                        function (err, users) {
-                            if(err != null){
-                                console.log('ERROR:'+err);
-                                return;
-                            }
-                            var result = {"status":"","message":"", "redirect":""};
-                            console.log(users);
-                            if(users.length >0){
-                                req.session.currentUser = users[0];
-                                loginUser.push(users[0]);
-                                console.log(users[0])    ;
-                                result.status = "success";
-                                result.message = "authenticated";
-                                result.redirect = "/profile.show"
-                                res.json(JSON.stringify(result));
-                            }
-                            else{
-                                console.log('not authenticate');
-                                result.status = "fail";
-                                result.message = " not authenticated";    
-                                res.json(JSON.stringify(result));
-                            }
-                                
-                        }
+            'emailId': req.body.emailId, 
+            'password': req.body.password
+        }, 
+        function (err, users) {
+            if(err != null){
+                console.log('ERROR:'+err);
+                return;
+            }
+            var result = {"status":"","message":"", "redirect":""};
+            console.log(users);
+            if(users.length >0){
+                req.session.currentUser = users[0];
+                loginUser.push(users[0]);
+                console.log(users[0])    ;
+                result.status = "success";
+                result.message = "authenticated";
+                result.redirect = "/profile.show"
+                res.json(JSON.stringify(result));
+            }
+            else{
+                console.log('not authenticate');
+                result.status = "fail";
+                result.message = " not authenticated";    
+                res.json(JSON.stringify(result));
+            }
+
+        }
         );
     }
 });
