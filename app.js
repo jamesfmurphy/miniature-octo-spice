@@ -67,6 +67,8 @@ app.post('/getLoginUser.json',function (req, res) {
     });
 
 // set up our routes
+
+//signup route
 app.post("/signup", function (req, res) {
     // User (emailId,password,firstName,lastName,birthDate) 
     var user = new User(req.body.emailId,req.body.password,
@@ -119,7 +121,7 @@ app.post("/signup", function (req, res) {
 });
 
 
-//API
+//API route will use themoviedb API to get the title and post link
 app.post("/API", function (req, res) {
     movieName = req.body;
    
@@ -139,6 +141,7 @@ app.post("/API", function (req, res) {
 
 });
 
+//update the database with latest json object for user
 app.post("/updateUser", function (req, res) {
     tempUser = req.body;
     console.log(req.body.emailId);
@@ -156,6 +159,7 @@ app.post("/updateUser", function (req, res) {
     
 });
 
+//login route
 app.post("/login", function (req, res) {
     // User (emailId,password,firstName,lastName,birthDate) 
     console.log('email:'+req.body.emailId);
@@ -195,10 +199,9 @@ app.post("/login", function (req, res) {
         );
     }
 });
-app.get("/login.show",function(req,res){
-    delete req.session.currentUser;
-    res.sendFile('public/login.html', {root: __dirname });
-});
+
+
+//logout route when user press logout
 app.get("/logout",function(req,res){
     console.log('loginUser before logout:'+loginUser)
     for(var i = loginUser.length - 1; i >= 0; i--) {
@@ -211,26 +214,36 @@ app.get("/logout",function(req,res){
     res.sendFile('public/indexMain.html', {root: __dirname });
 });
 
+//route for main profile page when user logins successfully
 app.post("/profile.show", function (req, res) {
     console.log('in post /profile.show');
     res.sendFile('public/profile.html', {root: __dirname });
 });
+
+//route for main profile page when user logins successfully
 app.get("/profile.show", function (req, res) {
     console.log('in post /profile.show');
     res.sendFile('public/profile.html', {root: __dirname });
 });
+
+//route for signup page
 app.post("/signup.show", function (req, res) {
     console.log('in post /signup.show');
     res.sendFile('public/signup.html', {root: __dirname });
 });
 
+//route for signup page
 app.get("/signup.show", function (req, res) {
     console.log('in get /signup.show');
     res.sendFile('public/signup.html', {root: __dirname });
 });
+
+
 app.get("/", function (req, res) {
     res.sendFile('public/indexMain.html', {root: __dirname });
 });
+
+//search route will return name of user searched
 app.post("/search", function (req, res) {
     console.log('queryString:'+req.body.queryString);
     if (req.body.queryString) {

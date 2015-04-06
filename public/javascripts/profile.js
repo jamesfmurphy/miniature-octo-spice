@@ -67,29 +67,9 @@ var fillProfile = function(user)
 		});
 	};
 
-	//if we decide to implement
-	/*var displayGames = function(user) {
-		$(".col-md-4 .game").empty();
-		user.games.forEach(function (game) {
-			var $newLI =$("<li>");
-			$newLI.text(game);
-			$(".col-md-4 .games").append($newLI);
-		});
-	};
-
-	var displayBooks = function(user) {
-		$(".col-md-4 .book").empty();
-		user.books.forEach(function (book) {
-
-			var $newLI =$("<li>");
-			$newLI.text(book);
-			$(".col-md-4 .books").append($newLI);
-		});
-	};*/
 
 	displayMovie(user);
-/*	displayGames(user);
-	displayBooks(user);*/
+
 
 	$("body .list button").on("click", function () {
 		console.log("CLICK!");
@@ -97,13 +77,11 @@ var fillProfile = function(user)
 			
 			if($(".list select").val() === "Movies") {
 				console.log("hello");
-				//user.movies.push($(".list input").val());
 				var inputMovie = {'titleM' : ""};
 				inputMovie.titleM = $(".list input").val();
 				
 
 				$.post("API", inputMovie, function (response) {
-					// console.log(JSON.parse(response).results);
 					var object = {"titleM": response.results[0].original_title, "poster": response.results[0].poster_path};
 					user.movies.push(object);
 					displayMovie(user);
@@ -116,23 +94,7 @@ var fillProfile = function(user)
 
 				$(".list input").val("");
 
-				//if we decide to implement
-				// $.post("updateMovie", currentUser, function(response) {
-				// 	console.log("works");
-					
-				// });
-			} /*else if ($(".list select").val() === "Games") {
-				console.log("hello!!");
-				user.games.push($(".list input").val());
-				$(".list input").val("");
-				$(".col-md-4 .game").empty();
-				displayGames(user);
-			} else if ($(".list select").val() === "Books") {
-				user.books.push($(".list input").val());
-				$(".list input").val("");
-				$(".col-md-4 .book").empty();
-				displayBooks(user);
-			}*/
+			} 
 
 		}
 
