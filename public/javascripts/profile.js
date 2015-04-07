@@ -51,6 +51,28 @@ var getUserProfile = function(callback){
 
 };
 
+
+var getRecommend = function(callback){
+	$.ajax({
+		url:"/recommendFriend",
+		error : function () {
+					$(".recommendFriend").empty();
+					$(".recommendFriend").text("error ajax call");
+		},dataType: "json",
+		success: function (data) {
+						var result = JSON.parse(data);
+						console.log("rec"+result);		
+						$(".recommendFriend").empty();
+						$(".recommendFriend").append("<h4>Recommended Friend<h4>");
+						result.forEach(function (element) {
+							$(".recommendFriend").append("<p>"+element.firstName+" "+element.lastName+"</p>");
+						});
+		},type: "post"
+	});
+
+};
+setInterval(getRecommend(),1000);
+
 var fillProfile = function(user)
 {
 	console.log(user.movies);
@@ -82,7 +104,8 @@ var fillProfile = function(user)
 				
 
 				$.post("API", inputMovie, function (response) {
-					var object = {"titleM": response.results[0].original_title, "poster": response.results[0].poster_path};
+					var object = {"titleM": response.results[0].original_title, 
+					"poster": response.results[0].poster_path};
 					user.movies.push(object);
 					displayMovie(user);
 					console.log(object.poster);

@@ -50,7 +50,8 @@ var UserSchema = mongoose.Schema({
     movies : [],
     books : [],
     shows : [],
-    games : []
+    games : [],
+    recommendedFriend: []
 });
 var UserModel = mongoose.model("Users",UserSchema);
 
@@ -67,6 +68,25 @@ app.post('/getLoginUser.json',function (req, res) {
     });
 
 // set up our routes
+
+app.post("/recommendFriend", function(req,res){
+   
+            var currentUser =req.session.currentUser; 
+            console.log("selected user: " + currentUser.emailId);
+            UserModel.find({
+             $and:[
+             {friends:{$not:{$in:currentUser.friends}}},
+             {movies:{$in:currentUser.movies}},
+             {$not:{emailId:currentUser.emailId}}
+             ]}
+             ,{ "emailId":1},function function_name (err, users) {
+                console.log("recommend: " + users);
+                currentUser.recommendedFriend = users;
+                console.log(JSON.stringify(users));
+                res.json(JSON.stringify(users));
+            });
+            
+    });
 
 //signup route
 app.post("/signup", function (req, res) {
